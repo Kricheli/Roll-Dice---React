@@ -1,12 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Input extends Component {
-state={UserInput: ""}
+  state = { UserInput: "" };
 
+  handleChange = (event) => {
+    if(event.target.value !== typeof(Number)){
+      console.log("error");
+    }
+  };
   render() {
     return (
       <div>
-        <input type="text"  value={this.state.UserInput}/>
+        <input type="text" maxLength={4} onChange={this.handleChange} />
       </div>
     );
   }
